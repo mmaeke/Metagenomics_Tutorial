@@ -18,9 +18,46 @@ To further improve the quality and completeness of your metagenomic reads you ca
 
 
 ## Quality check and trimming
-Removal of redundant, low quality sequences
+A quality check gives you information about your raw sequences. This check then also helps you to examine the quality of your reads and tells you about contamination. After this quality check you will then need to trim your sequences, so you are further working with good quality reads.
+
 ### FastQC
-### Illumina-utils
+Is used for the Quality Check. After running this program you will be looking at different modules, which will give you information about your forward and reverse sequencing reads.
+
+1. Basic statistics
+2. Per base sequence quality
+3. Per sequence quality scores
+4. Per ase sequence content
+5. Per base GC content
+6. Per sequence GC content
+7. Per base N content
+8. Sequence length distribution
+9. Sequence Duplication Levels
+10. Overrepresented Sequences
+
+You will directly receive information about your different modules. The tick shows you that everything is okay, the exclamation mark tells you something is unusual and you should have a look at it, the X tells you something is really unusual and may be wrong.
+
+A good introduction into the program [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is given in this [Video](https://www.youtube.com/watch?v=bz93ReOv87Y)
+
+1. Your basic statistics show you the total number of sequences, Sequence lengths as single number or range and the overall GC % of the library.
+
+2. Per base sequence quality shows you the base calls on the x-axis and the quality score on the y-axis. You are generally looking for quality scores, which are high. Good quality base calls are usually above 20. This plot gives you information about where you should trim your reads.
+
+3. Per sequence quality scores give you information about the distribution of your good sequences. You are generally looking for a high peak on the right side of your x-axis.
+
+4. Per base sequence content should give you an even distribution of the four bases, which do not change with base position. You are looking for parallel lines.
+
+5. Per base GC content
+
+6. Per sequence GC content is plotting the distribution of GC contents across all sequences. Smooth peek with one or two spikes coming out stands for a contamination in your library.
+
+7. Per base N content shows you if there are uncalled bases in your library
+
+8. Length distribution gives you information if all your sequences are the same length.
+
+9. Sequence duplication level shows how unique your sequences are in the library. So in the best case most sequences occur once. In the top you can see the sequence duplication level, giving you information about the percentage of sequences, which is non unique.
+
+10. Overrepresented sequences looks for individual sequences, which are overrepresented and make up more than 0.1 % of your library. 
+
 
 ## Optional: Coverage, Diversity and similarity of metagenomic samples
 
