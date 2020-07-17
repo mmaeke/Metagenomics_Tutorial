@@ -18,7 +18,7 @@ To further improve the quality and completeness of your metagenomic reads you ca
 
 
 ## Quality check and trimming
-A quality check gives you information about your raw sequences. This check then also helps you to examine the quality of your reads and tells you about contamination. After this quality check you will then need to trim your sequences, so you are further working with good quality reads.
+A quality check gives you information about your raw sequences. This check then also helps you to examine the quality of your reads and tells you about contamination. After this quality check you will then need to trim your sequences. While trimming you remove adapters and sequences of bad quality.
 
 ### FastQC
 Is used for the Quality Check. After running this program you will be looking at different modules, which will give you information about your forward and reverse sequencing reads.
@@ -66,22 +66,29 @@ A good introduction into the program [FastQC](https://www.bioinformatics.babraha
 
 
 
-## Optional: Abundance estimation
+## Optional: Abundance estimation of different taxonomic levels within your reads
 ### Kraken2/Bracken
+
 
 ## Optional: Reference guided assembly
 
-## Assembly
-An assembly of short read fragments will obtain longer genomic contigs.
+## De novo Assembly
+An assembly is a set of sequences which best approximate the original sequenced material. When doing your de novo assembly the program you use looks for overlapping regions on your reads to create longer contigs. From these contigs scaffolds are build. Mostly de Bruijn graphs are used to get the best possible sequence based on kmers. 
 ### Megahit
 
+
+
 ## Readmapping
+Is used to generate statistics of your assembly.
 ### Bowtie2
 
 ## Binning
 ### Anvi'o
 
+After binning you can use CheckM to get your Bin statistics.
+
 ## Bin targeted reassemblies
+To improve your assembly you can map your retrieved bin back to your reads.
 ### Spades
 
 
