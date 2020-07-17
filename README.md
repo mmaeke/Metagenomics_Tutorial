@@ -1,22 +1,111 @@
-# Metagenomics_Tutorial
+# Metagenomics Tutorial
+**Metagenomics** is the study of pooled DNA or RNA recovered from environmental sample containing organisms that have not been isolated and identified.
+
+A **metagenome** is a collection of genomes from all the cells present in a particular environment.
+*(Brock, 15th edition)*
+
+#### First, some basics:
+
+
+To analyze metagenomes several steps are required:
+1. Quality check and trimming
+2. Assembly
+3. Binning
+6. Annotation
+
+To further improve the quality and completeness of your metagenomic reads you can perform Bin targeted reassemblies. This means you use your retrieved bins and map these back to the assembly. This might fill gaps and lengthen sequences, 
+
+
 
 ## Quality check and trimming
-### FastQC
-### Illumina-utils
+A quality check gives you information about your raw sequences. This check then also helps you to examine the quality of your reads and tells you about contamination. After this quality check you will then need to trim your sequences. While trimming you remove adapters and sequences of bad quality.
 
-## Optional: Abundance estimation
+### FastQC
+Is used for the Quality Check. After running this program you will be looking at different modules, which will give you information about your forward and reverse sequencing reads.
+
+1. Basic statistics
+2. Per base sequence quality
+3. Per sequence quality scores
+4. Per ase sequence content
+5. Per base GC content
+6. Per sequence GC content
+7. Per base N content
+8. Sequence length distribution
+9. Sequence Duplication Levels
+10. Overrepresented Sequences
+
+You will directly receive information about your different modules. The tick shows you that everything is okay, the exclamation mark tells you something is unusual and you should have a look at it, the X tells you something is really unusual and may be wrong.
+
+A good introduction into the program [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is given in this [Video](https://www.youtube.com/watch?v=bz93ReOv87Y)
+
+1. Your basic statistics show you the total number of sequences, Sequence lengths as single number or range and the overall GC % of the library.
+
+2. Per base sequence quality shows you the base calls on the x-axis and the quality score on the y-axis. You are generally looking for quality scores, which are high. Good quality base calls are usually above 20. This plot gives you information about where you should trim your reads.
+
+3. Per sequence quality scores give you information about the distribution of your good sequences. You are generally looking for a high peak on the right side of your x-axis.
+
+4. Per base sequence content should give you an even distribution of the four bases, which do not change with base position. You are looking for parallel lines.
+
+5. Per base GC content
+
+6. Per sequence GC content is plotting the distribution of GC contents across all sequences. Smooth peek with one or two spikes coming out stands for a contamination in your library.
+
+7. Per base N content shows you if there are uncalled bases in your library
+
+8. Length distribution gives you information if all your sequences are the same length.
+
+9. Sequence duplication level shows how unique your sequences are in the library. So in the best case most sequences occur once. In the top you can see the sequence duplication level, giving you information about the percentage of sequences, which is non unique.
+
+10. Overrepresented sequences looks for individual sequences, which are overrepresented and make up more than 0.1 % of your library. 
+
+
+## Optional: Coverage, Diversity and similarity of metagenomic samples
+
+- [Nonpareil](http://enve-omics.ce.gatech.edu/nonpareil/): a redundancy-based approach to assess the level of coverage in metagenomic datasets
+- [Mash](): R (vegan), Pairwise distances, ordination plots 
+
+
+
+## Optional: Abundance estimation of different taxonomic levels within your reads
 ### Kraken2/Bracken
+
 
 ## Optional: Reference guided assembly
 
-## Assembly
+## De novo Assembly
+An assembly is a set of sequences which best approximate the original sequenced material. When doing your de novo assembly the program you use looks for overlapping regions on your reads to create longer contigs. From these contigs scaffolds are build. Mostly de Bruijn graphs are used to get the best possible sequence based on kmers. 
 ### Megahit
 
+
+
 ## Readmapping
+Is used to generate statistics of your assembly.
 ### Bowtie2
 
 ## Binning
 ### Anvi'o
 
+After binning you can use CheckM to get your Bin statistics.
+
 ## Bin targeted reassemblies
+To improve your assembly you can map your retrieved bin back to your reads.
 ### Spades
+
+
+
+## Quality check and filtering
+
+## First abundance estimation of Metagenomic reads
+### using Kraken2 and Bracken
+
+Building a Kraken database (SILVA138, GTDB, NCBI etc.)
+
+``Kraken2-build --db NAME -special silva``
+
+Bracken build to build a Bracken database with read length of the reads
+
+``bracken-build -d ../../DB/Kraken2/SILVA138_db_k2/ -t 4 -l 150``
+
+Kraken classification
+
+``kraken2 --db ../../DB/Kraken2/SILVA138_db_k2/ --threads 4 --output Hel0_out --report report_Hel0 --paired --classified-out cseqs#.fq ../../Metagenomes/Hel_0/final_pure_reads_1.fastq ../../Metagenomes/Hel_0/final_pure_reads_2.fastq``
