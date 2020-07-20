@@ -4,32 +4,55 @@
 A **metagenome** is a collection of genomes from all the cells present in a particular environment.
 *(Brock, 15th edition)*
 
-If you would like to gain more information into the world of 'omics there are some good [Seminars](https://www.youtube.com/watch?v=R9KLkCZ95cU) from the Meren Lab. Every wednesday 4pm a new video is going live on their [Youtube Channel](https://www.youtube.com/channel/UCVFH6ULygyqqLGfDnmf0G4A).
+If you would like to dive deeper into the world of 'omics there are some good [Seminars](https://www.youtube.com/watch?v=R9KLkCZ95cU) from the Meren Lab. Every wednesday 4pm a new video is going live on their [Youtube Channel](https://www.youtube.com/channel/UCVFH6ULygyqqLGfDnmf0G4A).
 
 
 
 **Before now going deeper into the analysis we will first start with some basics:**
 
-In several steps of the tutorial you will read about reads, contigs, scaffolds, etc., so here is a quick overview for you:
+In several steps of the tutorial you will read about "reads", "contigs", "scaffolds", etc., so here is a quick overview for you:
 
-A **library** is everything that has been sequenced in sequencing runs and therefore contains all information about your metagenome.
+A **library** is a collection of similarly sized DNA fragments with known adapter sequences (20-40 bp) added to the 5' and 3' ends. The library contains your reads. 
 
-The expression **Reads** is used for single DNA or protein fragments.
+The expression **reads** is used for single DNA or protein fragments.
 
-**Contigs** are then contiguous reads, which belong to the same genetic source and consist of two or more reads.
+**contigs** are then contiguous reads, which belong to the same genetic source and consist of two or more reads.
 
-A **Scaffold** is further a part of a reconstructed sequence containing contigs and gaps.
+A **scaffold** is further a part of a reconstructed sequence containing contigs and gaps.
 
-![Overview_MG](https://github.com/mmaeke/Metagenomics_Tutorial/blob/master/Images/Overview_MG.png)
+<p align="center">
+  <img height="200" src="https://github.com/mmaeke/Metagenomics_Tutorial/blob/master/Images/Overview_MG.png" />
+</p>
 
-### Let's start with your analysis
-To analyze metagenomes several steps are required:
-1. Quality check and trimming
-2. Assembly
-3. Binning
-6. Annotation
 
-To further improve the quality and completeness of your metagenomic reads you can perform Bin targeted reassemblies. This means you use your retrieved bins and map these back to the assembly. This might fill gaps and lengthen sequences, 
+
+## Let's start with Metagenomics!
+
+A metagenomic analysis consists of various steps: 
+
+1. Your sample hast to be filtered and DNA needs to be extracted. (Field work)
+
+2. Extracted DNA is then sent away for sequencing. Further library preparations are done and sequencing is performed. If you would like to understand the sequencing procedure you can have a look at this [Video](https://www.youtube.com/watch?v=fCd6B5HRaZ8), which shows you the Illumina sequencing by synthesis. (Wet Lab)
+
+3. After sequencing you will receive your reads. Your reads are small gene fragments from all the genomes present in your environment. Basically, you now have many puzzles mixed together and now our goal will be to sort the different puzzles apart and then put each puzzle back together.
+
+Steps 1-3 were done before, now we are coming to the steps, which are important for you and your work.
+
+4. We are now coming to the actual bioinformatic analyses. To analyze metagenomes several steps are required:
+ - Quality check and trimming
+ - Assembly
+ - Binning
+ - Annotation
+
+  To further improve the quality and completeness of your metagenomic reads you can perform Bin targeted reassemblies. This means you use your retrieved bins and map these back to the assembly. This might fill gaps and lengthen sequences, 
+
+
+<p align="center">
+  <img height="500" src="https://github.com/mmaeke/Metagenomics_Tutorial/blob/master/Images/Metagenomics%20Workflow.png" />
+</p>
+
+
+
 
 
 ## Quality check and trimming
