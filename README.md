@@ -16,7 +16,7 @@ A **library** is a collection of similarly sized DNA fragments with known adapte
 
 The expression **reads** is used for single DNA or protein fragments.
 
-**contigs** are then contiguous reads, which belong to the same genetic source and consist of two or more reads.
+**Contigs** are then contiguous reads, which belong to the same genetic source and consist of two or more reads.
 
 A **scaffold** is further a part of a reconstructed sequence containing contigs and gaps.
 
@@ -44,7 +44,7 @@ Steps 1-3 were done before, now we are coming to the steps, which are important 
  - Binning
  - Annotation
 
-  To further improve the quality and completeness of your metagenomic reads you can perform Bin targeted reassemblies. This means you use your retrieved bins and map these back to the assembly. This might fill gaps and lengthen sequences, 
+To further improve the quality and completeness of your metagenomic reads you can perform bin targeted reassemblies. This means you use your retrieved bins and map these back to the assembly. This might fill gaps and lengthen sequences. 
 
 
 <p align="center">
