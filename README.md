@@ -4,11 +4,16 @@
 A **metagenome** is a collection of genomes from all the cells present in a particular environment.
 *(Brock, 15th edition)*
 
+
 #### First, some basics:
 In several steps of the tutorial you will read about reads, contigs, scaffolds, etc., so here is a quick overview for you:
+
 A **library** is everything that has been sequenced in sequencing runs and therefore contains all information about your metagenome.
-The expression **Reads** is used for single DNA or protein fragments. 
+
+The expression **Reads** is used for single DNA or protein fragments.
+
 **Contigs** are then contiguous reads, which belong to the same genetic source and consist of two or more reads.
+
 A **Scaffold** is further a part of a reconstructed sequence containing contigs and gaps.
 
 ![Overview_MG](https://github.com/mmaeke/Metagenomics_Tutorial/blob/master/Images/Overview_MG.png)
