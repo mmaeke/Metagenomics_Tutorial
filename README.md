@@ -4,8 +4,12 @@
 A **metagenome** is a collection of genomes from all the cells present in a particular environment.
 *(Brock, 15th edition)*
 
+If you would like to gain more information into the world of 'omics there are some good [Seminars](https://www.youtube.com/watch?v=R9KLkCZ95cU) from the Meren Lab. Every wednesday 4pm a new video is going live on their [Youtube Channel](https://www.youtube.com/channel/UCVFH6ULygyqqLGfDnmf0G4A).
 
-#### First, some basics:
+
+
+**Before now going deeper into the analysis we will first start with some basics:**
+
 In several steps of the tutorial you will read about reads, contigs, scaffolds, etc., so here is a quick overview for you:
 
 A **library** is everything that has been sequenced in sequencing runs and therefore contains all information about your metagenome.
@@ -18,6 +22,7 @@ A **Scaffold** is further a part of a reconstructed sequence containing contigs 
 
 ![Overview_MG](https://github.com/mmaeke/Metagenomics_Tutorial/blob/master/Images/Overview_MG.png)
 
+### Let's start with your analysis
 To analyze metagenomes several steps are required:
 1. Quality check and trimming
 2. Assembly
