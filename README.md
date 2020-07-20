@@ -5,7 +5,13 @@ A **metagenome** is a collection of genomes from all the cells present in a part
 *(Brock, 15th edition)*
 
 #### First, some basics:
+In several steps of the tutorial you will read about reads, contigs, scaffolds, etc., so here is a quick overview for you:
+A **library** is everything that has been sequenced in sequencing runs and therefore contains all information about your metagenome.
+The expression **Reads** is used for single DNA or protein fragments. 
+**Contigs** are then contiguous reads, which belong to the same genetic source and consist of two or more reads.
+A **Scaffold** is further a part of a reconstructed sequence containing contigs and gaps.
 
+![Overview_MG](https://github.com/mmaeke/Metagenomics_Tutorial/blob/master/Images/Overview_MG.png)
 
 To analyze metagenomes several steps are required:
 1. Quality check and trimming
@@ -16,17 +22,16 @@ To analyze metagenomes several steps are required:
 To further improve the quality and completeness of your metagenomic reads you can perform Bin targeted reassemblies. This means you use your retrieved bins and map these back to the assembly. This might fill gaps and lengthen sequences, 
 
 
-
 ## Quality check and trimming
-A quality check gives you information about your raw sequences. This check then also helps you to examine the quality of your reads and tells you about contamination. After this quality check you will then need to trim your sequences. While trimming you remove adapters and sequences of bad quality.
+When receiving your raw reads after sequencing you very often can see some bias in the beginning of your sequences, also some adapters might still be included in your sequence. A quality check will give you further information about your raw sequences. This check then also helps you to examine the quality of your reads and tells you about contamination. After this first quality check you will then need to trim your sequences accordingly. While trimming, you remove adapters and sequences of bad quality. To see if your trimming worked, you can then repeat the quality check once again after your trimming step.
 
 ### FastQC
-Is used for the Quality Check. After running this program you will be looking at different modules, which will give you information about your forward and reverse sequencing reads.
+is one of the programs you can use for the Quality Check. After running this program you will be looking at different modules, which will give you information about your forward and reverse sequencing reads.
 
 1. Basic statistics
 2. Per base sequence quality
 3. Per sequence quality scores
-4. Per ase sequence content
+4. Per base sequence content
 5. Per base GC content
 6. Per sequence GC content
 7. Per base N content
@@ -36,7 +41,9 @@ Is used for the Quality Check. After running this program you will be looking at
 
 You will directly receive information about your different modules. The tick shows you that everything is okay, the exclamation mark tells you something is unusual and you should have a look at it, the X tells you something is really unusual and may be wrong.
 
-A good introduction into the program [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is given in this [Video](https://www.youtube.com/watch?v=bz93ReOv87Y)
+A good introduction to the program [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is given in this [Video](https://www.youtube.com/watch?v=bz93ReOv87Y)
+
+Here is also a brief summary of the different modules:
 
 1. Your basic statistics show you the total number of sequences, Sequence lengths as single number or range and the overall GC % of the library.
 
@@ -50,7 +57,7 @@ A good introduction into the program [FastQC](https://www.bioinformatics.babraha
 
 6. Per sequence GC content is plotting the distribution of GC contents across all sequences. Smooth peek with one or two spikes coming out stands for a contamination in your library.
 
-7. Per base N content shows you if there are uncalled bases in your library
+7. Per base N content shows you if there are uncalled bases in your library.
 
 8. Length distribution gives you information if all your sequences are the same length.
 
