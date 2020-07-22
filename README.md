@@ -3,4 +3,4 @@
 Metagenomics, or better 'omics in general can be quite complex. More and more programs are released and especially when starting with your first analysis this field can be quite overwhelming. 
 As an attempt to make the first experience with Metagenomics easier I created this little Metagenomics Tutorial here.
 
-In the [Wiki](https://github.com/mmaeke/Metagenomics_Tutorial/wiki) you can find an introduction into the world of metagenomics, your first steps and some programs you might have a look into.
+In the [Wiki](https://github.com/mmaeke/Metagenomics_Tutorial/wiki) you can find an introduction into the world of metagenomics and your first steps.
